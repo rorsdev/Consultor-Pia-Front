@@ -4,8 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+    # 0 = no abrir PRs de actualizacion de version (no toca Angular/React/TS).
+    # Las actualizaciones de SEGURIDAD ignoran este limite y siguen llegando.
+    open-pull-requests-limit: 0
     groups:
-      all-deps:
+      security-updates:
+        applies-to: security-updates
         patterns:
           - "*"
